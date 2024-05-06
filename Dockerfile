@@ -8,6 +8,5 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-# команда, выполняемая при запуске контейнера
 CMD ["python3", "src/main.py"]
 ENTRYPOINT ["/entrypoint.sh"]
