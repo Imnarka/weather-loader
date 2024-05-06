@@ -20,7 +20,7 @@ class WeatherAPI:
         """
         Метод для получения данных о погоде
         Args:
-            params (List[Tuple]): Список параметров пути запроса
+            params (List[Tuple]): Список параметров запроса
         Return:
             data (Dict): Результат запрос
         """
