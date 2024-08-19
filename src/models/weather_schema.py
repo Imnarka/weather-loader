@@ -1,16 +1,17 @@
 """
 Описание схемы моделей БД
 """
+
 from sqlalchemy import JSON, Numeric, String
 from sqlalchemy.orm import mapped_column, Mapped
 
 from db_config import Base
 
-class WeatherData(Base):
 
+class WeatherData(Base):
     """
     Класс, представляющий данные о погоде, хранящиеся в базе данных.
-        
+
     id (int): Уникальный идентификатор записи.
     temperature (float): Температура в градусах Цельсия.
     wind_direction (str): Направление ветра (например, "Север", "Юго-Запад").
@@ -22,7 +23,7 @@ class WeatherData(Base):
 
     """
 
-    __tablename__ = 'weather_data'
+    __tablename__ = "weather_data"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     temperature: Mapped[float] = mapped_column(
@@ -41,14 +42,10 @@ class WeatherData(Base):
         nullable=False,
     )
     pressure: Mapped[float] = mapped_column(
-        doc="Давление",
-        type_=Numeric(5, 2),
-        nullable=False
+        doc="Давление", type_=Numeric(5, 2), nullable=False
     )
     precipitation: Mapped[str] = mapped_column(
-        doc="Осадки",
-        type_=String(),
-        nullable=True
+        doc="Осадки", type_=String(), nullable=True
     )
     precipitation: Mapped[dict] = mapped_column(
         doc="Осадки и их кол-во",
